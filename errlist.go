@@ -1,5 +1,7 @@
 package err2
 
+//v1.0.0
+
 import (
 	"fmt"
 	"strings"
