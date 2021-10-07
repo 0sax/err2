@@ -1,6 +1,6 @@
 package err2
 
-//v1.0.5
+//v1.1.2
 
 import (
 	"fmt"
