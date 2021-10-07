@@ -1,6 +1,6 @@
 package err2
 
-//v1.0.4
+//v1.0.5
 
 import (
 	"fmt"
@@ -11,8 +11,14 @@ type ErrList struct {
 	errs []string
 }
 
+
+
 func (e *ErrList) Add(s string) {
 	e.errs = append(e.errs, s)
+}
+
+func (e *ErrList) AddF(s string, v... interface{}) {
+	e.errs = append(e.errs, fmt.Sprintf(s, v...))
 }
 
 func (e *ErrList) Len() int {
