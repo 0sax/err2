@@ -33,7 +33,13 @@ func (e *ErrList) Errs() []string {
 	return e.errs
 }
 
-func (e *ErrList) ErrsAsError() error {
-	ee := strings.Join(e.Errs(), ", ")
-	return fmt.Errorf(fmt.Sprintf("%v", ee))
+func (e *ErrList) ErrsAsError() (err error) {
+
+	if e.HasErrs() {
+		ee := strings.Join(e.Errs(), ", ")
+		err = fmt.Errorf(fmt.Sprintf("%v", ee))
+	}
+
+	return
+
 }
